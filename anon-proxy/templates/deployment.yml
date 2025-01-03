@@ -2,10 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: anonymization-proxy
-  labels:
-    app: anonymization-proxy
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: anonymization-proxy
@@ -16,6 +13,7 @@ spec:
     spec:
       containers:
         - name: anonymization-proxy-container
-          image: harbor.dev-se.telia-ck8s.com/knowledge-dev/anon-proxy:latest
+          image: {{ .Values.image }}
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
