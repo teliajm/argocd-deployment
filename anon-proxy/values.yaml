@@ -19,10 +19,10 @@ securityContext:
   capabilities:
     drop:
     - ALL
+  runAsNonRoot: false  
   seccompProfile:
     type: "RuntimeDefault"
     readOnlyRootFilesystem: true
-    runAsUser: 1000
 
 networkPolicy:
   ## @param networkPolicy.enabled Enable creation of NetworkPolicy resources
