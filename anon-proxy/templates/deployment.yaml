@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anonymization-proxy
+spec:
+  selector:
+    matchLabels:
+      app: anonymization-proxy
+  template:
+    metadata:
+      labels:
+        app: anonymization-proxy
+    spec:
+      containers:
+        - name: anonymization-proxy-container
+          image: {{ .Values.image }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
