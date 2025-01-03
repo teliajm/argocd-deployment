@@ -11,6 +11,20 @@ resources:
     cpu: 100m
     memory: 128Mi
 
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+    - ALL
+  runAsNonRoot: true
+  seccompProfile:
+    type: "RuntimeDefault"
+  # readOnlyRootFilesystem: true
+  # runAsUser: 1000
+
 networkPolicy:
   ## @param networkPolicy.enabled Enable creation of NetworkPolicy resources
   ##
