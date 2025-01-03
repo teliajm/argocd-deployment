@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Release.Name } }
+  name: anonymization-proxy-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: { { .Release.Name } }
+      app: anonymization-proxy-dev
   template:
     metadata:
       labels:
-        app: { { .Release.Name } }
+        app: anonymization-proxy-dev
     spec:
       containers:
-        - name: { { .Release.Name } }
+        - name: anonymization-proxy-dev
           image: 'dummy:latest'
