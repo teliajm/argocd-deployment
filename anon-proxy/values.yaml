@@ -1,3 +1,12 @@
 image:
   tag: latest
-  registry: harbor.dev-se.telia-ck8s.com/knowledge-dev/anon-proxy
+  pullPolicy: Always
+  registry: harbor.dev-se.telia-ck8s.com
+  
+containers:
+  anon_proxy_app:
+    imageName: anon-proxy
+    name: "anonymization-proxy"
+    version: latest
+
+    replicas: 1
