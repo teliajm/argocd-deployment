@@ -1,4 +1,4 @@
-image: harbor.dev-se.telia-ck8s.com/knowledge-dev/anon-proxy:latest
+image: harbor.dev-se.telia-ck8s.com/knowledge-dev/anon-proxy:v1.0.0
 
 resources:
   # Most Welkin clusters require the application to specify resources.
