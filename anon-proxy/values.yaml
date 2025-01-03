@@ -19,7 +19,6 @@ securityContext:
   capabilities:
     drop:
     - ALL
-  runAsNonRoot: true
   seccompProfile:
     type: "RuntimeDefault"
     readOnlyRootFilesystem: true
