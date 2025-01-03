@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: anonymization-proxy
 spec:
+  securityContext:
+    {{- toYaml .Values.podSecurityContext | nindent 4 }}
   selector:
     matchLabels:
       app: anonymization-proxy
@@ -13,6 +15,8 @@ spec:
     spec:
       containers:
         - name: anonymization-proxy-container
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}        
           image: {{ .Values.image }}
           imagePullPolicy: Always
           ports:
